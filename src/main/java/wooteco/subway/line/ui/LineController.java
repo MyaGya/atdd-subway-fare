@@ -85,8 +85,7 @@ public class LineController extends SubwayController {
         }
 
         lineService.addLineStation(lineId, sectionRequest);
-        return ResponseEntity.created(URI.create("/api/lines/" + lineId + "/sections"))
-            .body(sectionRequest);
+        return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{lineId}/sections")
