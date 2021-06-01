@@ -165,6 +165,6 @@ public class LineService {
     }
 
     public void checkRegisteredLine(Long id) {
-        lineDao.checkHaveLine(id);
+        lineDao.checkHasLine(id);
     }
 }

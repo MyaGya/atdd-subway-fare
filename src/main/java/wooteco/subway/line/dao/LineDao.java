@@ -113,7 +113,7 @@ public class LineDao {
     }
 
     public void deleteById(Long id) {
-        jdbcTemplate.update("delete from Line where id = ?", id);
+        jdbcTemplate.update("delete from LINE where id = ?", id);
     }
 
     public List<Long> findTransFerLineIdsBylineIdAndStation(Long lineId,
@@ -123,7 +123,7 @@ public class LineDao {
             .queryForList(sql, Long.class, station.getId(), station.getId(), lineId);
     }
 
-    public void checkHaveLine(Long id) {
+    public void checkHasLine(Long id) {
         String sql = "select COUNT(id) from LINE where id = ?";
         if (jdbcTemplate.queryForObject(sql, Integer.class, id) < 1) {
             throw new NoSuchLineException("잘못된 노선입니다.");
